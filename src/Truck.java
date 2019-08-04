@@ -1,5 +1,7 @@
 public class Truck extends Car{
     private double loadWeight;
+    private static final double AC_EXTRA_FUEL_COST = 1.6;
+    private static final double LOAD_EXTRA_FUEL_COST = 0.5;
 
     public Truck() {
     }
@@ -21,19 +23,11 @@ public class Truck extends Car{
     public double calculateTotalMileage() {
         double extraMileage = 0;
         if(isAirConditionOn()){
-            extraMileage += 1.6;
+            extraMileage += AC_EXTRA_FUEL_COST;
         }
-        double counter = loadWeight;
-        while (counter>=100){
-            extraMileage += 0.5;
-            counter-=100;
-        }
-        return super.calculateTotalMileage() + extraMileage;
-    }
-
-    @Override
-    public double calculateRange() {
-        return super.calculateRange();
+        // casting weight division to int to remove residue
+        extraMileage += ((int)(loadWeight / 100)) * LOAD_EXTRA_FUEL_COST;
+        return getAverageMileage() + extraMileage;
     }
 
     @Override

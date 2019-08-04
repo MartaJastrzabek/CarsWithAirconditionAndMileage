@@ -1,3 +1,5 @@
+import java.util.Locale;
+
 public class Vehicle {
     private String name;
     private double fuelTankCapacity;
@@ -48,8 +50,8 @@ public class Vehicle {
     public String toString() {
         return "Nazwa pojazdu: "  + name + ", pojemność baku: "
                 + fuelTankCapacity + " l, \nśrednie spalanie na 100 km: "
-                + averageMileage + " całkowite spalanie: " + String.format("%.1f",calculateTotalMileage()) + "\nzasięg na pełnym baku wynosi: "
-                + String.format("%.1f", calculateRange()) + " km";
+                + averageMileage + " całkowite spalanie: " + String.format(Locale.US,"%.1f",calculateTotalMileage()) + "\nzasięg na pełnym baku wynosi: "
+                + String.format(Locale.US,"%.1f", calculateRange()) + " km";
     }
 
 

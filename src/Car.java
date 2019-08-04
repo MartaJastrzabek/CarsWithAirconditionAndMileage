@@ -1,5 +1,6 @@
 public class Car extends Vehicle {
     private boolean isAirConditionOn;
+    private static final double AC_EXTRA_FUEL_COST = 0.8;
 
     public Car() {
     }
@@ -21,14 +22,9 @@ public class Car extends Vehicle {
     public double calculateTotalMileage() {
         double extraMileage = 0;
         if(isAirConditionOn){
-            extraMileage+=0.8;
+            extraMileage += AC_EXTRA_FUEL_COST;
         }
         return super.calculateTotalMileage() + extraMileage;
-    }
-
-    @Override
-    public double calculateRange() {
-        return super.calculateRange();
     }
 
     @Override

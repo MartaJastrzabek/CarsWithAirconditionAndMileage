@@ -14,7 +14,7 @@ public class CarsTest {
             cars[i].setAirConditionOn(true);
         }
 
-        System.out.println();
+        System.out.println("Po włączeniu klimatyzacji:");
         printArray(cars);
     }
 
